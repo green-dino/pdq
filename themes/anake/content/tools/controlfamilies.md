@@ -10,28 +10,29 @@ Control families in information security standards like NIST SP 800-53 and ISO 2
 
 ## NIST SP 800-53 Control Families
 
-| Control Family                 | Core Functions                                     |
-| ------------------------------ | -------------------------------------------------- |
-| Access Control (AC)           | Manage and restrict access to information systems. |
-| Audit and Accountability (AU)  | Audit system activities and retain audit logs.     |
-| Awareness and Training (AT)    | Provide security awareness and training.           |
-| Security Assessment and Authorization (CA) | Assess and authorize information systems. |
-| Configuration Management (CM)  | Manage and control system configurations.           |
-| Contingency Planning (CP)     | Plan for, respond to, and recover from incidents.   |
-| Identification and Authentication (IA) | Verify the identity of users and devices. |
-| Incident Response (IR)        | Plan, coordinate, and respond to security incidents. |
-| Maintenance (MA)              | Manage system maintenance, including patching.       |
-| Security Assessment (RA)      | Conduct security assessments and validate controls.  |
-| System and Communications Protection (SC) | Secure communication and protect data. |
-| System and Information Integrity (SI) | Monitor and ensure system integrity. |
-| Program Management (PM)       | Govern and manage the security program.             |
-| System and Services Acquisition (SA) | Acquire and procure secure information systems. |
-| Security Planning and Policy (PL) | Develop and maintain security policies and plans. |
-| Supply Chain Risk Management (SR) | Assess and manage supply chain risks. |
-| Privacy (PR)                  | Protect personally identifiable information (PII). |
-| Security Architecture and Engineering (AE) | Develop secure system architecture. |
-| Testing and Evaluation (TE)    | Test and evaluate security controls and systems.     |
-| Risk Assessment (RA)          | Assess and manage information security risks.       |
+| Control Family                 | Core Functions                                     | Cybersecurity Framework Components  |
+| ------------------------------ | -------------------------------------------------- | ----------------------------------- |
+| Access Control (AC)           | Manage and restrict access to information systems. | Identification and Authentication (IA), System and Communications Protection (SC) |
+| Audit and Accountability (AU)  | Audit system activities and retain audit logs.     | Audit and Accountability (AU)     |
+| Awareness and Training (AT)    | Provide security awareness and training.           | Awareness and Training (AT)       |
+| Security Assessment and Authorization (CA) | Assess and authorize information systems. | Security Assessment and Authorization (CA) |
+| Configuration Management (CM)  | Manage and control system configurations.           | Configuration Management (CM)     |
+| Contingency Planning (CP)     | Plan for, respond to, and recover from incidents.   | Contingency Planning (CP)         |
+| Identification and Authentication (IA) | Verify the identity of users and devices. | Identification and Authentication (IA) |
+| Incident Response (IR)        | Plan, coordinate, and respond to security incidents. | Incident Response (IR)           |
+| Maintenance (MA)              | Manage system maintenance, including patching.       | Maintenance (MA)                 |
+| Security Assessment (RA)      | Conduct security assessments and validate controls.  | Security Assessment (RA)         |
+| System and Communications Protection (SC) | Secure communication and protect data. | System and Communications Protection (SC) |
+| System and Information Integrity (SI) | Monitor and ensure system integrity. | System and Information Integrity (SI) |
+| Program Management (PM)       | Govern and manage the security program.             | Program Management (PM)          |
+| System and Services Acquisition (SA) | Acquire and procure secure information systems. | System and Services Acquisition (SA) |
+| Security Planning and Policy (PL) | Develop and maintain security policies and plans. | Security Planning and Policy (PL) |
+| Supply Chain Risk Management (SR) | Assess and manage supply chain risks. | Supply Chain Risk Management (SR) |
+| Privacy (PR)                  | Protect personally identifiable information (PII). | Privacy (PR)                      |
+| Security Architecture and Engineering (AE) | Develop secure system architecture. | Security Architecture and Engineering (AE) |
+| Testing and Evaluation (TE)    | Test and evaluate security controls and systems.     | Testing and Evaluation (TE)      |
+| Risk Assessment (RA)          | Assess and manage information security risks.       | Risk Assessment (RA)            |
+
 
 ## ISO 27001 Control Families
 
