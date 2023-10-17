@@ -10,3 +10,9 @@ draft = false
 [OWASP SAMM](https://owaspsamm.org/resources/)
 
 [Binary Risk Analysis](https://binary.protect.io)
+
+[Security Rat](https://owasp.org/www-project-securityrat/)
+
+[Free Dev tools](https://github.com/ripienaar/free-for-dev)
+
+[Analyze Malicious Software](https://zeltser.com/malware-analysis-cheat-sheet/)
