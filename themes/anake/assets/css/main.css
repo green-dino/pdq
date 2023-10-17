@@ -1,22 +1,82 @@
+/* Reset some default styles to ensure consistency */
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Use a modern font stack for readability */
 body {
-  color: #222;
-  font-family: sans-serif;
-  line-height: 1.5;
-  margin: 1rem;
-  max-width: 768px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
 }
 
+/* Container for content with a subtle box shadow */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles with a background color and border bottom */
 header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
+  background-color: #bad3d6;
+  color: #fff;
+  border-bottom: 2px solid #0056b3;
+  padding: 1rem 0;
+  text-align: center;
 }
 
+/* Footer styles with a background color and border top */
 footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
+  background-color: #bad3d6;
+  color: #fff;
+  border-top: 2px solid #0056b3;
+  padding: 1rem 0;
+  text-align: center;
 }
 
+/* Link styles with a hover effect for better user experience */
 a {
-  color: #00e;
+  color: #007BFF;
   text-decoration: none;
+  transition: color 0.2s;
 }
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Styling for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #333;
+}
+
+/* Add some spacing between list items for better readability */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+/* Add a subtle border to images for a modern touch */
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+/* Additional styles can be added for specific elements as needed */

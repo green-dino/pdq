@@ -16,3 +16,8 @@ draft = false
 [Free Dev tools](https://github.com/ripienaar/free-for-dev)
 
 [Analyze Malicious Software](https://zeltser.com/malware-analysis-cheat-sheet/)
+
+[HoneyPots](https://github.com/paralax/awesome-honeypots)
+
+
+
