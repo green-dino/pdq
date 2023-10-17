@@ -2,7 +2,7 @@
 title = 'Plan'
 date = 2023-02-15T10:00:00-07:00
 draft = false
-tags = ['plan']
+tags = ['Plan']
 +++
 
 # Planning Phase (Steps 1 -6)
