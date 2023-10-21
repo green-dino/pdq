@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graphical Representation on Plan Do Check</title>
+    <link>https://pdq.pages.dev/tags/graphical-representation/</link>
+    <description>Recent content in Graphical Representation on Plan Do Check</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Oct 2023 08:00:00 -0700</lastBuildDate><atom:link href="https://pdq.pages.dev/tags/graphical-representation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>User Guide for Graphical Representation</title>
+      <link>https://pdq.pages.dev/posts/usergroups/containers/</link>
+      <pubDate>Mon, 16 Oct 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/posts/usergroups/containers/</guid>
+      <description>User Guide for Graphical Representation This user guide provides an overview of a graphical representation created using the Mermaid library. The diagram visualizes the relationships and connections between various elements within a system, including an Active Directory structure, a Trouble Ticket Mapping System, Primary Work Role ID Mapping, and Relationship Mapping.
+Active Directory The &amp;ldquo;Active Directory&amp;rdquo; is represented as a subgraph and contains a hierarchy of elements within it:
+Root (A) is the top-level element.</description>
+    </item>
+    
+  </channel>
+</rss>

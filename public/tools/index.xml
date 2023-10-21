@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Plan Do Check</title>
+    <link>https://pdq.pages.dev/tools/</link>
+    <description>Recent content in Tools on Plan Do Check</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Oct 2023 10:00:00 -0700</lastBuildDate><atom:link href="https://pdq.pages.dev/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Functions</title>
+      <link>https://pdq.pages.dev/tools/functions/</link>
+      <pubDate>Mon, 16 Oct 2023 10:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tools/functions/</guid>
+      <description>Functions Functions Overview In the context of a structured process, various functions are performed to ensure the efficient execution of tasks. These functions are organized into different blocks representing specific phases. The following sections provide an overview of these functions within each block.
+Block: Problem Identification and Change Initiation Function 1 (F1): Identify and Document the Problem
+User (A) identifies and documents the problem (C) or the need for change (D).</description>
+    </item>
+    
+    <item>
+      <title>Blocks</title>
+      <link>https://pdq.pages.dev/tools/building_playbook/</link>
+      <pubDate>Mon, 16 Oct 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tools/building_playbook/</guid>
+      <description>Blocks Block: Problem Identification and Change Initiation Task 1: User (A) identifies and documents the problem (C) or the need for change (D). Task 2: Work Role (B) reviews the problem (C) or change (D) request initiated by the User (A) and validates its significance and impact. Block: Change Control Record Creation Task 3: Work Role (B) creates a Change Control Record (F) and fills in the necessary details, including the problem (C) or change (D) description and the affected systems or processes.</description>
+    </item>
+    
+    <item>
+      <title>Control Families NIST and ISO</title>
+      <link>https://pdq.pages.dev/tools/controlfamilies/</link>
+      <pubDate>Sun, 01 Jan 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tools/controlfamilies/</guid>
+      <description>Control Families Control families in information security standards like NIST SP 800-53 and ISO 27001 represent a structured approach to safeguarding critical assets and ensuring the confidentiality, integrity, and availability of sensitive information. These control families are essential for establishing and maintaining robust security practices within an organization.
+NIST SP 800-53 Control Families Control Family Core Functions Cybersecurity Framework Components Access Control (AC) Manage and restrict access to information systems. Identification and Authentication (IA), System and Communications Protection (SC) Audit and Accountability (AU) Audit system activities and retain audit logs.</description>
+    </item>
+    
+    <item>
+      <title>External Resources</title>
+      <link>https://pdq.pages.dev/tools/external_resources/</link>
+      <pubDate>Sun, 01 Jan 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tools/external_resources/</guid>
+      <description>SKF Framework
+OWASP SAMM
+Binary Risk Analysis
+Security Rat
+Free Dev tools
+Analyze Malicious Software
+HoneyPots
+Cybersecurity and Tools:
+Untitled Goose Tool for Azure, Azure Active Directory, and Microsoft 365 Python Cheat Sheet Linux Command Line Cheat Sheet Quick Reference for ChatGPT Deep Learning Cheat Sheet Data Sources and Visualization: 6. Makeover Monday - Data 7. BFI Statistical Yearbook 8. Data.gov 9. Maven Analytics Data Playground 10. Knoema Infographics 11. Sons of Hierarchies - Real-World Fake Data</description>
+    </item>
+    
+    <item>
+      <title>Meeting Agenda</title>
+      <link>https://pdq.pages.dev/tools/meeting_agenda/</link>
+      <pubDate>Sun, 01 Jan 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tools/meeting_agenda/</guid>
+      <description>This page serves as the template for technical meeting agendas, limit meeting sessions to 45 minutes, and technical conversations to not more than 3 per 45 minute period.
+Meeting Agenda I. Introduction A. Welcome and introductions B. Purpose and goals of the meeting C. Agenda overview II. Review of Previous Action Items A. Recap of action items from the previous meeting B. Update on the progress of each action item C.</description>
+    </item>
+    
+  </channel>
+</rss>

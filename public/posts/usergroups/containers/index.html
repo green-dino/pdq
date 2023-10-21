@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>User Guide for Graphical Representation | Plan Do Check</title>
+
+      <link rel="stylesheet" href="/css/main.min.f98bc42695cd36e0a850769606ad2fcc59f5e9ec028f9560471e0fc2b50d4005.css" integrity="sha256-&#43;YvEJpXNNuCoUHaWBq0vzFn16ewCj5VgRx4PwrUNQAU=" crossorigin="anonymous">
+
+
+      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>Plan Do Check</h1>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    </ul>
+  </nav>
+
+
+  </header>
+  <main>
+    
+  <h1>User Guide for Graphical Representation</h1>
+
+  
+  
+  <time datetime="2023-10-16T08:00:00-07:00">October 16, 2023</time>
+
+  <h1 id="user-guide-for-graphical-representationhttpsgithubcomgreen-dinoiso_change_control_processblobmainticketing20systemticket20flow20mappingmd"><a href="https://github.com/green-dino/ISO_Change_Control_Process/blob/main/Ticketing%20System/ticket%20flow%20mapping.md">User Guide for Graphical Representation</a></h1>
+<p>This user guide provides an overview of a graphical representation created using the Mermaid library. The diagram visualizes the relationships and connections between various elements within a system, including an Active Directory structure, a Trouble Ticket Mapping System, Primary Work Role ID Mapping, and Relationship Mapping.</p>
+<h2 id="active-directory">Active Directory</h2>
+<p>The &ldquo;Active Directory&rdquo; is represented as a subgraph and contains a hierarchy of elements within it:</p>
+<ul>
+<li><strong>Root (A)</strong> is the top-level element.</li>
+<li><strong>Users (B)</strong> are connected to the Root.</li>
+<li>Under Users, you have various sub-elements, including:
+<ul>
+<li>SEC-ARCH (C)</li>
+<li>SYS-ARCH (D)</li>
+<li>SOFT-DEV (E)</li>
+<li>DATA-ARCH (F)</li>
+<li>ENT-ARCH (G)</li>
+<li>TECH-ARCH (H)</li>
+<li>CYBER-ANALYST (I)</li>
+<li>CYBER-INFRA (J)</li>
+<li>DATA-ANALYST (K)</li>
+<li>SYS-DEV (L)</li>
+<li>NET-ENG (M)</li>
+<li>SYS-ADMIN (N)</li>
+<li>SEC-ASSESSOR (O)</li>
+<li>SEC-CONT-ASSESSOR (P)</li>
+</ul>
+</li>
+</ul>
+<p>These elements represent different roles or categories within the Active Directory subgraph. The arrows indicate the hierarchy and relationships between these elements.</p>
+<h2 id="trouble-ticket-mapping-system">Trouble Ticket Mapping System</h2>
+<p>The &ldquo;Trouble Ticket Mapping System&rdquo; is another subgraph and represents a system for handling trouble tickets:</p>
+<ul>
+<li><strong>User (Q)</strong> is connected to &ldquo;Creates&rdquo; a Trouble Ticket (R).</li>
+<li>Trouble Tickets (R) are &ldquo;Assigned To&rdquo; (S) someone.</li>
+<li>The &ldquo;Assigned To&rdquo; (S) can &ldquo;Update&rdquo; the Trouble Ticket (R).</li>
+<li>The Trouble Ticket (R) can be &ldquo;Resolved&rdquo; (T).</li>
+</ul>
+<p>These elements represent the flow of operations in a trouble ticket system, where users create tickets, they are assigned to individuals, updated, and eventually resolved.</p>
+<h2 id="primary-work-role-id-mapping">Primary Work Role ID Mapping</h2>
+<p>The &ldquo;Primary Work Role ID Mapping&rdquo; subgraph represents the mapping of work roles:</p>
+<ul>
+<li><strong>Root (A)</strong> is connected to various work roles (D, C, E, F, G) using &ldquo;has&rdquo; relationships.</li>
+<li>The work roles (D, C, E, F, G) are also &ldquo;associated with&rdquo; the Root (A).</li>
+</ul>
+<p>This subgraph illustrates the relationships between the Root and various work roles and how they are associated.</p>
+<h2 id="relationship-mapping">Relationship Mapping</h2>
+<p>The &ldquo;Relationship Mapping&rdquo; subgraph shows relationships between different activities or tasks:</p>
+<ul>
+<li>Ticket Creation (TC) &ldquo;Belongs to&rdquo; Analyze (A).</li>
+<li>Ticket Assignment (TA) &ldquo;Belongs to&rdquo; Oversee and Govern (O).</li>
+<li>Ticket Tracking (TT) &ldquo;Belongs to&rdquo; Operate and Maintain (F).</li>
+<li>Ticket Resolution (TR) &ldquo;Belongs to&rdquo; Protect and Defend (K).</li>
+<li>Data Management (DM) &ldquo;Belongs to&rdquo; Securely Provision (N).</li>
+<li>Communication (CM) &ldquo;Belongs to&rdquo; Oversee and Govern (O).</li>
+</ul>
+<p>These elements represent how various activities or tasks are related to different work roles or categories.</p>
+<p>In summary, this graphical representation provides a visual overview of the relationships and connections between different elements, work roles, and activities in a system, making it easier to understand the structure and flow of the system.</p>
+
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/graphical-representation/">Graphical Representation</a></li>
+        <li><a href="/tags/active-directory/">Active Directory</a></li>
+        <li><a href="/tags/trouble-ticket/">Trouble Ticket</a></li>
+        <li><a href="/tags/work-roles/">Work Roles</a></li>
+        <li><a href="/tags/relationship-mapping/">Relationship Mapping</a></li>
+    </ul>
+  </div>
+
+
+  </main>
+  <footer>
+    <p>Copyright 2023. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>

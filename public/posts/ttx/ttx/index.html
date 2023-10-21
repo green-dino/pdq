@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Detection Engineering | Plan Do Check</title>
+
+      <link rel="stylesheet" href="/css/main.min.f98bc42695cd36e0a850769606ad2fcc59f5e9ec028f9560471e0fc2b50d4005.css" integrity="sha256-&#43;YvEJpXNNuCoUHaWBq0vzFn16ewCj5VgRx4PwrUNQAU=" crossorigin="anonymous">
+
+
+      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>Plan Do Check</h1>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    </ul>
+  </nav>
+
+
+  </header>
+  <main>
+    
+  <h1>Detection Engineering</h1>
+
+  
+  
+  <time datetime="2023-10-19T10:00:00-07:00">October 19, 2023</time>
+
+  <h1 id="detection-engineeringhttpsd3fendmitreorg"><a href="https://d3fend.mitre.org">Detection Engineering</a></h1>
+<p>Building an effective detection engineering system requires time, a scope and an understanding of the signals analysis you desire to perform.
+You should conduct training and assessments of your detection engineering environment focusing on understanding the threat model for your organization.
+When you consider how you will calcuate &lsquo;risk&rsquo; I suggest that you use accessible language, this <a href="https://github.com/green-dino/TTX/blob/main/utils/dread.py">tool</a> is focused on providing quantification and qualification of risk and even includes a random number generator to roll your chances based on 10,000 roles.</p>
+<p>This document, titled &ldquo;Detection Engineering,&rdquo; serves as a comprehensive resource for individuals and teams involved in building effective detection engineering systems. The document emphasizes the importance of understanding and analyzing signals, conducting training and assessments, and comprehending the threat model relevant to your organization. It also introduces a tool for quantification and qualification of risk.</p>
+<h1 id="mitre-attck-techniques-tactics-subtechniques-and-procedures">MITRE ATT&amp;CK: Techniques, Tactics, Subtechniques, and Procedures</h1>
+<p>MITRE ATT&amp;CK (Adversarial Tactics, Techniques, and Common Knowledge) is a framework used to categorize the actions and behaviors of cyber adversaries. It is structured into several components, including:</p>
+<h2 id="tactics">Tactics</h2>
+<p>Tactics represent high-level objectives or goals that adversaries aim to achieve during a cyberattack. These objectives are categorized into various areas:</p>
+<ol>
+<li>
+<p><strong>Initial Access:</strong> This tactic encompasses techniques used by adversaries to gain their initial foothold in a target environment.</p>
+</li>
+<li>
+<p><strong>Execution:</strong> Under this tactic, adversaries execute malicious code on a target system.</p>
+</li>
+<li>
+<p><strong>Persistence:</strong> Techniques related to maintaining access to a compromised system are covered here.</p>
+</li>
+<li>
+<p><strong>Privilege Escalation:</strong> Adversaries seek to gain higher levels of access or privilege on the target system.</p>
+</li>
+<li>
+<p><strong>Defense Evasion:</strong> Techniques that help adversaries avoid detection or thwart security mechanisms fall under this tactic.</p>
+</li>
+<li>
+<p><strong>Credential Access:</strong> Adversaries aim to steal, collect, or abuse credentials for further actions.</p>
+</li>
+<li>
+<p><strong>Discovery:</strong> The discovery tactic includes methods used to gain information about the target environment.</p>
+</li>
+<li>
+<p><strong>Lateral Movement:</strong> This tactic involves techniques used by adversaries to move laterally within a network.</p>
+</li>
+<li>
+<p><strong>Collection:</strong> Techniques used to gather and exfiltrate information are categorized here.</p>
+</li>
+<li>
+<p><strong>Command and Control:</strong> Adversaries establish and maintain control over compromised systems using this tactic.</p>
+</li>
+<li>
+<p><strong>Exfiltration:</strong> Adversaries attempt to remove data from the target environment under this tactic.</p>
+</li>
+<li>
+<p><strong>Impact:</strong> Techniques that disrupt or damage systems and data are found in this category.</p>
+</li>
+</ol>
+<h2 id="techniques">Techniques</h2>
+<p>Techniques are specific methods or procedures that adversaries use to achieve the objectives defined by tactics. These are detailed actions that adversaries take during an attack. For example, &ldquo;Spearphishing Attachment&rdquo; is a technique under the &ldquo;Initial Access&rdquo; tactic.</p>
+<h2 id="subtechniques">Subtechniques</h2>
+<p>Subtechniques are further refinements of techniques. They provide more specific details about how a technique can be executed. Subtechniques allow for a more granular understanding of adversary behavior.</p>
+<p>For example, &ldquo;Spearphishing Attachment&rdquo; might have subtechniques like &ldquo;Malicious Word Document as Attachment&rdquo; or &ldquo;Malicious PDF Attachment&rdquo; to describe different attack vectors within that technique.</p>
+<h2 id="procedures">Procedures</h2>
+<p>Procedures represent detailed steps or implementations of specific techniques or subtechniques. They provide insights into how adversaries execute a particular technique in practice. These procedures can be specific to threat actor groups or campaigns and often include tools, tactics, and other contextual information.</p>
+<p>Understanding MITRE ATT&amp;CK&rsquo;s hierarchy of tactics, techniques, subtechniques, and procedures is crucial for cybersecurity professionals to detect, defend against, and respond to real-world cyber threats.</p>
+<h1 id="building-defense">Building Defense</h1>
+<p><a href="https://www.iso.org/obp/ui/#iso:std:iso-iec:19770:-1:ed-3:v1:en">Information Technology</a></p>
+<h2 id="related-countermeasure-techniques">Related Countermeasure Techniques</h2>
+<p>This table represents considerations for the modeling and defensive mesasures across the technology stack. There are countless combinations to consider. Don&rsquo;t overburden yourself, pick a few components and understand them before you move on to somethjing else.</p>
+<p>The Govern Section, provides where you should have documentaiton written, this can come in a variety of forms. Databases, physical print, but the important component is that the information exists and is accessibile for the teams.</p>
+<p>In the modeling column, consider this as a component where you can measure and model based on the risk assessment framework that you have implemented.</p>
+<p>Considerations for modeling and data analysis should consider these structures.</p>
+<h1 id="levels-of-measurement-and-quantifying-data">Levels of Measurement and Quantifying Data</h1>
+<p>When dealing with data, it&rsquo;s essential to understand the levels of measurement, which determine the type of data you are working with and the mathematical operations you can perform on that data. There are four commonly recognized levels of measurement: Nominal, Ordinal, Interval, and Ratio. Let&rsquo;s explore these levels with examples drawn from the cybersecurity domain:</p>
+<h2 id="1-nominal">1. Nominal</h2>
+<ul>
+<li>
+<p><strong>Description:</strong> Nominal data is the simplest level of measurement and deals with categories or labels. In this level, data is classified into distinct groups with no inherent order or numerical value. Nominal data often represents qualitative attributes or categorical variables.</p>
+</li>
+<li>
+<p><strong>Examples (Cybersecurity):</strong></p>
+<ul>
+<li><strong>Tactics:</strong> Initial Access, Execution, Persistence</li>
+<li><strong>File Types:</strong> PDF, Word Document, Excel Spreadsheet</li>
+<li><strong>User Roles:</strong> Admin, Analyst, Guest</li>
+</ul>
+</li>
+<li>
+<p><strong>Quantification:</strong> Nominal data is typically quantified using counts or frequencies. You can count the number of occurrences of each category, but mathematical operations like addition or subtraction are not meaningful.</p>
+</li>
+</ul>
+<h2 id="2-ordinal">2. Ordinal</h2>
+<ul>
+<li>
+<p><strong>Description:</strong> Ordinal data includes categories that have a meaningful order or ranking but have unequal intervals between them. The differences between values do not have consistent meaning. Ordinal data allows you to compare data points in terms of greater than, less than, or equal to but not to determine the exact differences between them.</p>
+</li>
+<li>
+<p><strong>Examples (Cybersecurity):</strong></p>
+<ul>
+<li><strong>Threat Levels:</strong> Low, Moderate, High, Critical</li>
+<li><strong>Severity Ratings:</strong> Low, Medium, High</li>
+<li><strong>User Privileges:</strong> Read-Only, Read-Write, Administrator</li>
+</ul>
+</li>
+<li>
+<p><strong>Quantification:</strong> Ordinal data can be quantified using ranking or ordering. You can determine the relative position of data points concerning each other, such as identifying which is greater or lesser. However, mathematical operations like addition or multiplication are not meaningful.</p>
+</li>
+</ul>
+<h2 id="3-interval">3. Interval</h2>
+<ul>
+<li>
+<p><strong>Description:</strong> Interval data includes ordered categories with equal intervals between them. Unlike ordinal data, interval data allows meaningful comparisons of the differences between data points because the intervals are consistent. However, it lacks a true zero point, meaning that values can be negative or zero, but not undefined.</p>
+</li>
+<li>
+<p><strong>Examples (Cybersecurity):</strong></p>
+<ul>
+<li><strong>Time:</strong> Timestamps</li>
+<li><strong>Software Version Numbers:</strong> 2.0, 3.0, 4.0</li>
+</ul>
+</li>
+<li>
+<p><strong>Quantification:</strong> Interval data can be quantified using numerical values, and you can perform mathematical operations like addition and subtraction on these values. However, since there is no true zero, ratios and multiplicative operations are not meaningful.</p>
+</li>
+</ul>
+<h2 id="4-ratio">4. Ratio</h2>
+<ul>
+<li>
+<p><strong>Description:</strong> Ratio data is the most advanced level of measurement, characterized by ordered categories with equal intervals and a true zero point. Ratio data allows for meaningful comparisons, addition, subtraction, multiplication, and division of data points.</p>
+</li>
+<li>
+<p><strong>Examples (Cybersecurity):</strong></p>
+<ul>
+<li><strong>Count of Security Incidents</strong></li>
+<li><strong>Response Time (in seconds)</strong></li>
+<li><strong>Network Bandwidth (in megabits per second)</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Quantification:</strong> Ratio data is quantified using numerical values, and you can perform all mathematical operations on these values because they have a true zero point. This allows for the calculation of ratios, proportions, and meaningful comparisons.</p>
+</li>
+</ul>
+<p>Understanding the level of measurement of your cybersecurity data is crucial when selecting appropriate statistical methods and visualizations to analyze and interpret your data effectively.</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Govern</th>
+<th>Model</th>
+<th>Harden</th>
+<th>Detect</th>
+<th>Isolate</th>
+<th>Deceive</th>
+<th>Evict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td>Application Hardening</td>
+<td>File Analysis</td>
+<td>Execution Isolation</td>
+<td>Decoy Environment</td>
+<td>Credential Eviction</td>
+</tr>
+<tr>
+<td>Asset Inventory</td>
+<td>Asset Vulnerability Enumeration</td>
+<td>Application Configuration Hardening</td>
+<td>Dynamic Analysis</td>
+<td>Executable Allowlisting</td>
+<td>Connected Honeynet</td>
+<td>Account Locking</td>
+</tr>
+<tr>
+<td>Configuration Inventory</td>
+<td>Data Inventory</td>
+<td>Dead Code Elimination</td>
+<td>Emulated File Analysis</td>
+<td>Executable Denylisting</td>
+<td>Integrated Honeynet</td>
+<td>Authentication Cache Invalidation</td>
+</tr>
+<tr>
+<td>Hardware Component Inventory</td>
+<td>Network Node Inventory</td>
+<td>Exception Handler Pointer Validation</td>
+<td>File Content Rules</td>
+<td>Hardware-based Process Isolation</td>
+<td>Standalone Honeynet</td>
+<td>Credential Revoking</td>
+</tr>
+<tr>
+<td>Network Mapping</td>
+<td>Software Inventory</td>
+<td>Pointer Authentication</td>
+<td>File Hashing</td>
+<td>IO Port Restriction</td>
+<td>Decoy Object</td>
+<td>File Eviction</td>
+</tr>
+<tr>
+<td>Logical Link Mapping</td>
+<td>Network Traffic Policy Mapping</td>
+<td>Process Segment Execution Prevention</td>
+<td>Identifier Analysis</td>
+<td>Kernel-based Process Isolation</td>
+<td>Decoy File</td>
+<td>File Removal</td>
+</tr>
+<tr>
+<td>Active Logical Link Mapping</td>
+<td>Physical Link Mapping</td>
+<td>Segment Address Offset Randomization</td>
+<td>Homoglyph Detection</td>
+<td>Mandatory Access Control</td>
+<td>Decoy Network Resource</td>
+<td>Email Removal</td>
+</tr>
+<tr>
+<td>Passive Logical Link Mapping</td>
+<td>Active Physical Link Mapping</td>
+<td>Stack Frame Canary Validation</td>
+<td>Identifier Activity Analysis</td>
+<td>System Call Filtering</td>
+<td>Decoy Persona</td>
+<td>Process Eviction</td>
+</tr>
+<tr>
+<td>Network Traffic Policy Mapping</td>
+<td>Operational Activity Mapping</td>
+<td>Credential Hardening</td>
+<td>Identifier Reputation Analysis</td>
+<td>Network Isolation</td>
+<td>Decoy Public Release</td>
+<td>Process Suspension</td>
+</tr>
+<tr>
+<td>Physical Link Mapping</td>
+<td>Access Modeling</td>
+<td>Biometric Authentication</td>
+<td>Domain Name Reputation Analysis</td>
+<td>Broadcast Domain Isolation</td>
+<td>Decoy Session Token</td>
+<td>Process Termination</td>
+</tr>
+</tbody>
+</table>
+<h2 id="digital-event-typeshttpsd3fendmitreorgtaxonomiesd3fdigitalevent"><a href="https://d3fend.mitre.org/taxonomies/d3f:DigitalEvent/">Digital Event Types</a></h2>
+<p>Fundamentally computers function in the same manner, there are considerations based on how these components work together, understanding the fundamental approach to systems engineering, and computer science will align you to understand that there are activites that occur when a user interacts with a system. This next section explores the components you should become familiar with to more clearly align your detection engineering process</p>
+<p>This is a simplified approach to highlighting common terminology that will keep you team communicating with language that you all understand.</p>
+<h3 id="dns-lookup">DNS Lookup</h3>
+<ul>
+<li><strong>Definition:</strong> A Domain Name System (DNS) lookup is a record returned from a DNS resolver after querying a DNS name server. Typically considered an A or AAAA record, where a domain name is resolved to an IPv4 or IPv6 address, respectively.</li>
+</ul>
+<h3 id="command">Command</h3>
+<ul>
+<li><strong>Definition:</strong> In computing, a command is a directive to a computer program acting as an interpreter of some kind, to perform a specific task. Most commonly, a command is either a directive to some kind of command-line interface, such as a shell, or an event in a graphical user interface triggered by the user selecting an option in a menu.</li>
+</ul>
+<h3 id="resource-access">Resource Access</h3>
+<ul>
+<li><strong>Definition:</strong> Ephemeral digital artifact comprising a request of a resource and any response from that resource.</li>
+</ul>
+<h3 id="system-call">System Call</h3>
+<ul>
+<li><strong>Definition:</strong> A system call is the programmatic way in which a computer program requests a service from the kernel of the operating system it is executed on. This may include hardware-related services (for example, accessing a hard disk drive), creation and execution of new processes, and communication with integral kernel services such as process scheduling. System calls provide an essential interface between a process and the operating system.</li>
+</ul>
+<h3 id="user-action">User Action</h3>
+<ul>
+<li><strong>Definition:</strong> An action performed by a user. Executing commands, granting permissions, and accessing resources are examples of user actions.</li>
+</ul>
+<h1 id="relationships">Relationships</h1>
+<p>This section explains the relationships of the Attack and Defend matricies. A technique will require an understanding of how the system functions and operates.
+Spend time creating diagrams and relationship dependencies to determine what technique is the appropriate technique based on your knowledge, skills and abilities.</p>
+<table>
+<thead>
+<tr>
+<th>ATT&amp;CK ID</th>
+<th>ATT&amp;CK Mitigation</th>
+<th></th>
+<th>Related D3FEND Techniques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1013</td>
+<td>Application Developer Guidance</td>
+<td></td>
+<td>A future release of D3FEND will define a taxonomy of Source Code Hardening Techniques.</td>
+</tr>
+<tr>
+<td>M1015</td>
+<td>Active Directory Configuration</td>
+<td></td>
+<td>D3-ANCI Authentication Cache Invalidation <!-- raw HTML omitted --> D3-DTP Domain Trust Policy <!-- raw HTML omitted --> D3-UAP User Account Permissions <!-- raw HTML omitted --> M1015 scope is broad, touches on a wide variety of techniques in D3FEND.</td>
+</tr>
+<tr>
+<td>M1016</td>
+<td>Vulnerability Scanning</td>
+<td></td>
+<td>Future D3FEND releases will model the scanning and inventory domains.</td>
+</tr>
+<tr>
+<td>M1017</td>
+<td>User Training</td>
+<td></td>
+<td>Modeling user training is outside the scope of D3FEND.</td>
+</tr>
+<tr>
+<td>M1018</td>
+<td>User Account Management</td>
+<td></td>
+<td>D3-LFP Local File Permissions <!-- raw HTML omitted --> D3-MAC Mandatory Access Control <!-- raw HTML omitted --> D3-SCP System Configuration Permissions</td>
+</tr>
+<tr>
+<td>M1019</td>
+<td>Threat Intelligence Program</td>
+<td></td>
+<td>Establishing and running a Threat Intelligence Program is outside the scope of D3FEND.</td>
+</tr>
+<tr>
+<td>M1020</td>
+<td>SSL/TLS Inspection</td>
+<td></td>
+<td>D3-NTA Network Traffic Analysis <!-- raw HTML omitted --> D3FEND models this as an infrastructure dependency to support D3-NTA.</td>
+</tr>
+<tr>
+<td>M1021</td>
+<td>Restrict Web-Based Content</td>
+<td></td>
+<td>D3-DNSAL DNS Allowlisting <!-- raw HTML omitted --> D3-DNSDL DNS Denylisting <!-- raw HTML omitted --> D3-FA File Analysis <!-- raw HTML omitted --> D3-ITF Inbound Traffic Filtering <!-- raw HTML omitted --> D3-NTA Network Traffic Analysis <!-- raw HTML omitted --> D3-OTF Outbound Traffic Filtering <!-- raw HTML omitted --> D3-UA URL Analysis <!-- raw HTML omitted --> M1021 scope is broad, touches on a wide variety of techniques in D3FEND.</td>
+</tr>
+<tr>
+<td>M1022</td>
+<td>Restrict File and Directory Permissions</td>
+<td></td>
+<td>D3-LFP Local File Permissions</td>
+</tr>
+<tr>
+<td>M1024</td>
+<td>Restrict Registry Permission</td>
+<td></td>
+<td>D3-SCP System Configuration Permissions</td>
+</tr>
+<tr>
+<td>M1025</td>
+<td>Privileged Process Integrity</td>
+<td></td>
+<td>D3-BA Bootloader Authentication <!-- raw HTML omitted --> D3-DLIC Driver Load Integrity Checking <!-- raw HTML omitted --> D3-MAC Mandatory Access Control <!-- raw HTML omitted --> D3-PSEP Process Segment Execution Prevention</td>
+</tr>
+<tr>
+<td>M1026</td>
+<td>Privileged Account Management</td>
+<td></td>
+<td>D3-DAM Domain Account Monitoring <!-- raw HTML omitted --> D3-LAM Local Account Monitoring <!-- raw HTML omitted --> D3-SPP Strong Password Policy</td>
+</tr>
+<tr>
+<td>M1027</td>
+<td>Password Policies</td>
+<td></td>
+<td>D3-OTP One-time Password <!-- raw HTML omitted --> D3-SPP Strong Password Policy</td>
+</tr>
+<tr>
+<td>M1028</td>
+<td>Operating System Configuration</td>
+<td></td>
+<td>D3-PH Platform Hardening</td>
+</tr>
+<tr>
+<td>M1029</td>
+<td>Remote Data Storage</td>
+<td></td>
+<td>IT disaster recovery plans are outside the current scope of D3FEND.</td>
+</tr>
+<tr>
+<td>M1030</td>
+<td>Network Segmentation</td>
+<td></td>
+<td>D3-BDI Broadcast Domain Isolation <!-- raw HTML omitted --> D3-ET Encrypted Tunnels <!-- raw HTML omitted --> D3-ISVA Inbound Session Volume Analysis <!-- raw HTML omitted --> D3-ITF Inbound Traffic Filtering</td>
+</tr>
+<tr>
+<td>M1031</td>
+<td>Network Intrusion Prevention</td>
+<td></td>
+<td>D3-ITF Inbound Traffic Filtering <!-- raw HTML omitted --> D3-NTA Network Traffic Analysis <!-- raw HTML omitted --> D3-OTF Outbound Traffic Filtering</td>
+</tr>
+<tr>
+<td>M1032</td>
+<td>Multi-factor Authentication</td>
+<td></td>
+<td>D3-MFA Multi-factor Authentication</td>
+</tr>
+<tr>
+<td>M1033</td>
+<td>Limit Software Installation</td>
+<td></td>
+<td>D3-EAL Executable Allowlisting <!-- raw HTML omitted --> D3-EDL Executable Denylisting</td>
+</tr>
+<tr>
+<td>M1034</td>
+<td>Limit Hardware Installation</td>
+<td></td>
+<td>D3-IOPR IO Port Restriction</td>
+</tr>
+<tr>
+<td>M1035</td>
+<td>Limit Access to Resource Over Network</td>
+<td></td>
+<td>D3-NI Network Isolation</td>
+</tr>
+<tr>
+<td>M1036</td>
+<td>Account Use Policies</td>
+<td></td>
+<td>D3-AL Account Locking <!-- raw HTML omitted --> D3-ANCI Authentication Cache Invalidation <!-- raw HTML omitted --> D3-ANET Authentication Event Thresholding <!-- raw HTML omitted --> D3-AZET may be related (is potentially related though not called out in ATT&amp;CK definition.)</td>
+</tr>
+<tr>
+<td>M1037</td>
+<td>Filter Network Traffic</td>
+<td></td>
+<td>D3-NI Network Isolation</td>
+</tr>
+<tr>
+<td>M1038</td>
+<td>Execution Prevention</td>
+<td></td>
+<td>D3-DLIC Driver Load Integrity Checking <!-- raw HTML omitted --> D3-EAL Executable Allowlisting <!-- raw HTML omitted --> D3-EDL Executable Denylisting <!-- raw HTML omitted --> D3-PSEP Process Segment Execution Prevention</td>
+</tr>
+<tr>
+<td>M1039</td>
+<td>Environment Variable Permissions</td>
+<td></td>
+<td>D3-ACH Application Configuration Hardening <!-- raw HTML omitted --> D3-SFA System File Analysis</td>
+</tr>
+<tr>
+<td>M1040</td>
+<td>Behavior Prevention on Endpoint</td>
+<td></td>
+<td>D3-ANET Authentication Event Thresholding <!-- raw HTML omitted --> D3-AZET Authorization Event Thresholding <!-- raw HTML omitted --> D3-JFAPA Job Function Access Pattern Analysis <!-- raw HTML omitted --> D3-RAPA Resource Access Pattern Analysis <!-- raw HTML omitted --> D3-SDA Session Duration Analysis <!-- raw HTML omitted --> D3-UDTA User Data Transfer Analysis <!-- raw HTML omitted --> D3-UGLPA User Geolocation Logon Pattern Analysis <!-- raw HTML omitted --> D3-WSAA Web Session Activity Analysis</td>
+</tr>
+<tr>
+<td>M1041</td>
+<td>Encrypt Sensitive Information</td>
+<td></td>
+<td>D3-DENCR Disk Encryption <!-- raw HTML omitted --> D3-ET Encrypted Tunnels <!-- raw HTML omitted --> D3-FE File Encryption <!-- raw HTML omitted --> D3-MENCR Message Encryption</td>
+</tr>
+<tr>
+<td>M1042</td>
+<td>Disable or Remove Feature or Program</td>
+<td></td>
+<td>D3-ACH Application Configuration Hardening <!-- raw HTML omitted --> D3-EDL Executable Denylisting <!-- raw HTML omitted --> D3-MAC Mandatory Access Control</td>
+</tr>
+<tr>
+<td>M1043</td>
+<td>Credential Access Protection</td>
+<td></td>
+<td>D3-HBPI Hardware-based Process Isolation</td>
+</tr>
+<tr>
+<td>M1044</td>
+<td>Restrict Library Loading</td>
+<td></td>
+<td>D3-SCF System Call Filtering <!-- raw HTML omitted --> D3-SCF is one possible way to filter library loading.</td>
+</tr>
+<tr>
+<td>M1045</td>
+<td>Code Signing</td>
+<td></td>
+<td>D3-DLIC Driver Load Integrity Checking <!-- raw HTML omitted --> D3-EAL Executable Allowlisting <!-- raw HTML omitted --> D3-SBV Service Binary Verification</td>
+</tr>
+<tr>
+<td>M1046</td>
+<td>Boot Integrity</td>
+<td></td>
+<td>D3-BA Bootloader Authentication <!-- raw HTML omitted --> D3-TBI TPM Boot Integrity</td>
+</tr>
+<tr>
+<td>M1047</td>
+<td>Audit</td>
+<td></td>
+<td>D3-DAM Domain Account Monitoring <!-- raw HTML omitted --> D3-LAM Local Account Monitoring <!-- raw HTML omitted --> D3-SFA System File Analysis <!-- raw HTML omitted --> M1047 scope is broad, touches on a wide variety of techniques in D3FEND.</td>
+</tr>
+<tr>
+<td>M1048</td>
+<td>Application Isolation and Sandboxing</td>
+<td></td>
+<td>D3-DA Dynamic Analysis <!-- raw HTML omitted --> D3-HBPI Hardware-based Process Isolation <!-- raw HTML omitted --> D3-MAC Mandatory Access Control <!-- raw HTML omitted --> D3-SCF System Call Filtering <!-- raw HTML omitted --> &ldquo;Sandboxing&rdquo; is often used to describe a detection environment which includes some forms of analysis (see D3-DA). Many forms of isolation (e.g., quarantining) are more static in nature and simply limit software&rsquo;s access to system resources.</td>
+</tr>
+<tr>
+<td>M1049</td>
+<td>Antivirus/Antimalware</td>
+<td></td>
+<td>D3-FCR File Content Rules <!-- raw HTML omitted --> D3-FH File Hashing <!-- raw HTML omitted --> D3-PA Process Analysis <!-- raw HTML omitted --> Process Analysis and subclasses.</td>
+</tr>
+<tr>
+<td>M1050</td>
+<td>Exploit Protection</td>
+<td></td>
+<td>D3-AH Application Hardening <!-- raw HTML omitted --> D3-EHPV Exception Handler Pointer Validation</td>
+</tr>
+</tbody>
+</table>
+
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/detection/">Detection</a></li>
+    </ul>
+  </div>
+
+
+  </main>
+  <footer>
+    <p>Copyright 2023. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>

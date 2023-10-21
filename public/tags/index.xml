@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Plan Do Check</title>
+    <link>https://pdq.pages.dev/tags/</link>
+    <description>Recent content in Tags on Plan Do Check</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Oct 2023 10:00:00 -0700</lastBuildDate><atom:link href="https://pdq.pages.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Detection</title>
+      <link>https://pdq.pages.dev/tags/detection/</link>
+      <pubDate>Thu, 19 Oct 2023 10:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/detection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Active Directory</title>
+      <link>https://pdq.pages.dev/tags/active-directory/</link>
+      <pubDate>Mon, 16 Oct 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/active-directory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graphical Representation</title>
+      <link>https://pdq.pages.dev/tags/graphical-representation/</link>
+      <pubDate>Mon, 16 Oct 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/graphical-representation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Relationship Mapping</title>
+      <link>https://pdq.pages.dev/tags/relationship-mapping/</link>
+      <pubDate>Mon, 16 Oct 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/relationship-mapping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trouble Ticket</title>
+      <link>https://pdq.pages.dev/tags/trouble-ticket/</link>
+      <pubDate>Mon, 16 Oct 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/trouble-ticket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Work Roles</title>
+      <link>https://pdq.pages.dev/tags/work-roles/</link>
+      <pubDate>Mon, 16 Oct 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/work-roles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Act</title>
+      <link>https://pdq.pages.dev/tags/act/</link>
+      <pubDate>Thu, 05 Oct 2023 11:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/act/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hardening</title>
+      <link>https://pdq.pages.dev/tags/hardening/</link>
+      <pubDate>Thu, 05 Oct 2023 11:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/hardening/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Do</title>
+      <link>https://pdq.pages.dev/tags/do/</link>
+      <pubDate>Wed, 15 Feb 2023 10:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/do/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plan</title>
+      <link>https://pdq.pages.dev/tags/plan/</link>
+      <pubDate>Wed, 15 Feb 2023 10:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/plan/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

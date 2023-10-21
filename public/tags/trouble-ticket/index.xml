@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trouble Ticket on Plan Do Check</title>
+    <link>https://pdq.pages.dev/tags/trouble-ticket/</link>
+    <description>Recent content in Trouble Ticket on Plan Do Check</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Oct 2023 08:00:00 -0700</lastBuildDate><atom:link href="https://pdq.pages.dev/tags/trouble-ticket/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>User Guide for Graphical Representation</title>
+      <link>https://pdq.pages.dev/posts/usergroups/containers/</link>
+      <pubDate>Mon, 16 Oct 2023 08:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/posts/usergroups/containers/</guid>
+      <description>User Guide for Graphical Representation This user guide provides an overview of a graphical representation created using the Mermaid library. The diagram visualizes the relationships and connections between various elements within a system, including an Active Directory structure, a Trouble Ticket Mapping System, Primary Work Role ID Mapping, and Relationship Mapping.
+Active Directory The &amp;ldquo;Active Directory&amp;rdquo; is represented as a subgraph and contains a hierarchy of elements within it:
+Root (A) is the top-level element.</description>
+    </item>
+    
+    <item>
+      <title>Trouble Ticket</title>
+      <link>https://pdq.pages.dev/posts/trouble-ticket/troubleticket/</link>
+      <pubDate>Wed, 15 Feb 2023 10:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/posts/trouble-ticket/troubleticket/</guid>
+      <description>Guide to System Engineering Process Introduction As a systems engineer, your role is crucial in ensuring the stability and reliability of complex systems. This guide will help you understand and navigate the system engineering process using the provided diagram as a reference.
+1. Increasing the Time Between Failures The primary goal of a systems engineer is to increase the time between system failures. This can be achieved through the following strategies:</description>
+    </item>
+    
+  </channel>
+</rss>
