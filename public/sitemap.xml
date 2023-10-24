@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://pdq.pages.dev/posts/hardening/hardening/</loc>
+    <lastmod>2023-10-21T11:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pdq.pages.dev/tags/hardening/</loc>
+    <lastmod>2023-10-21T11:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pdq.pages.dev/tags/</loc>
+    <lastmod>2023-10-21T11:00:00-07:00</lastmod>
+  </url><url>
     <loc>https://pdq.pages.dev/tags/detection/</loc>
     <lastmod>2023-10-19T10:00:00-07:00</lastmod>
   </url><url>
     <loc>https://pdq.pages.dev/posts/ttx/ttx/</loc>
-    <lastmod>2023-10-19T10:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://pdq.pages.dev/tags/</loc>
     <lastmod>2023-10-19T10:00:00-07:00</lastmod>
   </url><url>
     <loc>https://pdq.pages.dev/tools/functions/</loc>
@@ -44,12 +50,6 @@
     <loc>https://pdq.pages.dev/posts/post-3/</loc>
     <lastmod>2023-10-05T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://pdq.pages.dev/tags/hardening/</loc>
-    <lastmod>2023-10-05T11:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://pdq.pages.dev/posts/hardening/hardening/</loc>
-    <lastmod>2023-10-05T11:00:00-07:00</lastmod>
-  </url><url>
     <loc>https://pdq.pages.dev/</loc>
     <lastmod>2023-10-01T08:00:00-07:00</lastmod>
   </url><url>
@@ -79,6 +79,8 @@
   </url><url>
     <loc>https://pdq.pages.dev/tools/meeting_agenda/</loc>
     <lastmod>2023-01-01T08:00:00-07:00</lastmod>
+  </url><url>
+    <loc>https://pdq.pages.dev/posts/networkanalysis/networkanalysis/</loc>
   </url><url>
     <loc>https://pdq.pages.dev/categories/</loc>
   </url>

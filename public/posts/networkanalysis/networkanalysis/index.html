@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> | Plan Do Check</title>
+
+      <link rel="stylesheet" href="/css/main.min.f98bc42695cd36e0a850769606ad2fcc59f5e9ec028f9560471e0fc2b50d4005.css" integrity="sha256-&#43;YvEJpXNNuCoUHaWBq0vzFn16ewCj5VgRx4PwrUNQAU=" crossorigin="anonymous">
+
+
+      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>Plan Do Check</h1>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    </ul>
+  </nav>
+
+
+  </header>
+  <main>
+    
+  <h1></h1>
+
+  
+  
+  <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
+
+  <h1 id="i-introduction">I. Introduction</h1>
+<p>Computer systems are connected, with networks. The network components are presented in seven layers, from physical to Application, layers are interconnected with systems built of components. This document will explains three concepts</p>
+<p>Transport Layer Protocol vulnerabilities, controls and mitigations</p>
+<p>Network Layer Protocols vulnerabilities, controls and mitigations</p>
+<p>Media Access Control(MAC) vulnerabilities, controls and mitigations</p>
+<table>
+<thead>
+<tr>
+<th>OSI Layer</th>
+<th>Network Communication Stack Layer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7. Application</td>
+<td>Application Layer</td>
+</tr>
+<tr>
+<td>6. Presentation</td>
+<td>Presentation Layer</td>
+</tr>
+<tr>
+<td>5. Session</td>
+<td>Session Layer</td>
+</tr>
+<tr>
+<td>4. Transport</td>
+<td>Transport Layer</td>
+</tr>
+<tr>
+<td>3. Network</td>
+<td>Network Layer</td>
+</tr>
+<tr>
+<td>2. Data Link</td>
+<td>Data Link Layer</td>
+</tr>
+<tr>
+<td>1. Physical</td>
+<td>Physical Layer</td>
+</tr>
+</tbody>
+</table>
+<h1 id="transport-layer-protocolshttpsdatatrackerietforgdochtmlrfc5246"><a href="https://datatracker.ietf.org/doc/html/rfc5246">Transport Layer Protocols</a></h1>
+<p>Transport Layer security is designed to create a secure connection between acliet and server, while they communicate on an insecure channel. By design TLS is designed to be secure and assumes that the attacker possess the abilitiy to capture, modify, delete, replay and otherwise have the ability to tamper with the messages over the channel.</p>
+<table>
+<thead>
+<tr>
+<th>Security Aspect</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confidentiality</td>
+<td>Protection against an attacker from reading the contents of traffic.</td>
+</tr>
+<tr>
+<td>Integrity</td>
+<td>Protection against an attacker modifying traffic.</td>
+</tr>
+<tr>
+<td>Replay Prevention</td>
+<td>Protection against an attacker replaying requests against the server.</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>Allowing the client to verify that they are connected to the real server (note that the identity of the client is not verified unless client certificates are used).</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://wiki.owasp.org/index.php/O-Saft">OWASP SSL audit for testers</a></p>
+<h1 id="mixed-active-content">Mixed active content</h1>
+<p>This occurs when an active resource, like scripts to CSS are loaded over an unsecure channel, unencrypted HTTP, this is dangerous since a malicious actor can modify these files since they are sent on an unsecure communications channel, permitting a malicious actor to execute arbitrary code (Javascript or CSS), this passive content loaded over the insecure communication channel can leak information or allow an attacker to deface the page.</p>
+<p>Good programming practices in web development are important to consider in mitigating this vulnerability.</p>
+<p>When a resource is not available via https:// consider these options</p>
+<p>Include the resource from a different host, if one is available.</p>
+<p>Download and host the content on your site directly, if you are legally allowed to do so.</p>
+<p>Exclude the resource from your site altogether.</p>
+<p>Considering non-standard tags
+<code>(&lt;a&gt;)</code> Anchor tags do not create mixed content errors, but there image gallery scripts that override the functionality of the <code>(&lt;a&gt;)</code> tag which loads the HTTP resource <code>href</code> attribute in to a lightbox, creating a mixed content problem.</p>
+<p>Consider a content security policy to enable addressing this misconfigurations at scale.</p>
+<h2 id="http-to-https-redirect">HTTP to HTTPS redirect</h2>
+<p>Sites will accept connections over HTTP (unencrypted channels) and redirect from 301 Moved Permanently to the Strict Transport Security header to instruct the browser to use HTTPS in teh future, however attackers can intercept this communication with tools like <a href="https://github.com/moxie0/sslstrip">sslstrip</a> to intercept and manipulate subsequent requests.</p>
+<p>References:</p>
+<p>Orzach, &amp; Khanna, D. (2022). Network Protocols for Security Professionals : Probe and Identify Network-Based Vulnerabilities and Safeguard Against Network Protocol Breaches. (1st ed.).</p>
+
+  
+
+
+  </main>
+  <footer>
+    <p>Copyright 2023. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>

@@ -6,11 +6,11 @@
     <description>Recent content in Hardening on Plan Do Check</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Oct 2023 11:00:00 -0700</lastBuildDate><atom:link href="https://pdq.pages.dev/tags/hardening/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Oct 2023 11:00:00 -0700</lastBuildDate><atom:link href="https://pdq.pages.dev/tags/hardening/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hardening</title>
+      <title>Considerations about Active Directory</title>
       <link>https://pdq.pages.dev/posts/hardening/hardening/</link>
-      <pubDate>Thu, 05 Oct 2023 11:00:00 -0700</pubDate>
+      <pubDate>Sat, 21 Oct 2023 11:00:00 -0700</pubDate>
       
       <guid>https://pdq.pages.dev/posts/hardening/hardening/</guid>
       <description>Active Directory Privileged Access Introduction The challenge of understanding the access privileges of various groups in Active Directory. Often, the full impact of a group&amp;rsquo;s access is not fully comprehended by the organization. Attackers frequently exploit access, even if it&amp;rsquo;s not always privileged access, to compromise Active Directory. Components of Access Rights Active Directory group membership. AD groups with privileged rights on computers. Delegated rights to AD objects through modifications of default permissions (for security principals, both direct and indirect).</description>

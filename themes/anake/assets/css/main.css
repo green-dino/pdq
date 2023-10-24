@@ -2,6 +2,7 @@
 html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Add box-sizing for better consistency */
 }
 
 /* Use a modern font stack for readability */
@@ -10,8 +11,6 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: #333;
-  margin: 0;
-  padding: 0;
   background-color: #f5f5f5;
 }
 
@@ -22,6 +21,7 @@ body {
   padding: 1rem;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px; /* Add border-radius for a more modern look */
 }
 
 /* Header styles with a background color and border bottom */
@@ -47,10 +47,12 @@ a {
   color: #007BFF;
   text-decoration: none;
   transition: color 0.2s;
+  /* Add an underline on hover for better usability */
 }
 
 a:hover {
   color: #0056b3;
+  text-decoration: underline;
 }
 
 /* Styling for headings */

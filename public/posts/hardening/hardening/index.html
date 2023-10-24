@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>Hardening | Plan Do Check</title>
+<title>Considerations about Active Directory | Plan Do Check</title>
 
       <link rel="stylesheet" href="/css/main.min.f98bc42695cd36e0a850769606ad2fcc59f5e9ec028f9560471e0fc2b50d4005.css" integrity="sha256-&#43;YvEJpXNNuCoUHaWBq0vzFn16ewCj5VgRx4PwrUNQAU=" crossorigin="anonymous">
 
@@ -34,11 +34,11 @@
   </header>
   <main>
     
-  <h1>Hardening</h1>
+  <h1>Considerations about Active Directory</h1>
 
   
   
-  <time datetime="2023-10-05T11:00:00-07:00">October 5, 2023</time>
+  <time datetime="2023-10-21T11:00:00-07:00">October 21, 2023</time>
 
   <h1 id="active-directory-privileged-access">Active Directory Privileged Access</h1>
 <h2 id="introduction">Introduction</h2>
@@ -99,6 +99,153 @@
 <h2 id="compatibility">Compatibility</h2>
 <p>The &ldquo;Account Operators&rdquo; group applies to specific versions of the Windows Server operating system. Its presence and privileges are part of the default security groups within Active Directory, tailored to the specific version in use.</p>
 <p>Understanding the role and limitations of the &ldquo;Account Operators&rdquo; group is essential for maintaining a secure and well-managed Active Directory environment.</p>
+<h1 id="understanding-the-administrators-group-in-active-directory">Understanding the &ldquo;Administrators&rdquo; Group in Active Directory</h1>
+<p>The &ldquo;Administrators&rdquo; group is a crucial security group in Active Directory, having significance both at the local and domain controller levels. This document aims to clarify the role, privileges, and importance of the &ldquo;Administrators&rdquo; group for those configuring Active Directory.</p>
+<h2 id="administrators-group-roles">&ldquo;Administrators&rdquo; Group Roles</h2>
+<p>The &ldquo;Administrators&rdquo; group serves vital roles at both the local and domain levels:</p>
+<h3 id="local-administrators-group">Local &ldquo;Administrators&rdquo; Group</h3>
+<ul>
+<li><strong>Full Control of Local Computer:</strong> Members of the local &ldquo;Administrators&rdquo; group have complete and unrestricted access to the computer where they are part of this group. They can perform administrative tasks and manage the computer&rsquo;s configuration.</li>
+</ul>
+<h3 id="active-directory-administrators-group">Active Directory &ldquo;Administrators&rdquo; Group</h3>
+<ul>
+<li><strong>Full Admin Rights on Active Directory:</strong> Members of the Active Directory &ldquo;Administrators&rdquo; group possess full administrative rights over the Active Directory domain and Domain Controllers. This grants them unparalleled control over the entire domain.</li>
+</ul>
+<h2 id="importance-and-privileges">Importance and Privileges</h2>
+<p>Members of the &ldquo;Administrators&rdquo; group, regardless of whether it&rsquo;s the local or Active Directory group, enjoy significant privileges:</p>
+<ul>
+<li>
+<p><strong>Unrestricted Access:</strong> Those in the &ldquo;Administrators&rdquo; group have unrestricted access to the computer or domain controller where they are members. This means they can make system-wide changes, install software, and configure the system as needed.</p>
+</li>
+<li>
+<p><strong>Control Over Domain Controllers:</strong> The &ldquo;Administrators&rdquo; group has built-in capabilities that give its members full control over the domain controllers. This level of access is critical for maintaining and managing the domain effectively.</p>
+</li>
+<li>
+<p><strong>Special Privileges:</strong> Members of the &ldquo;Administrators&rdquo; group have special privileges, including the ability to take ownership of any object in the directory or any resource on a domain controller. This facilitates various administrative tasks.</p>
+</li>
+<li>
+<p><strong>Service Administrator Group:</strong> The &ldquo;Administrators&rdquo; group is often considered a service administrator group due to its comprehensive control over domain controllers and critical domain resources.</p>
+</li>
+</ul>
+<h2 id="group-characteristics">Group Characteristics</h2>
+<p>To maintain the security and integrity of the &ldquo;Administrators&rdquo; group, consider the following characteristics:</p>
+<ul>
+<li>
+<p><strong>Cannot Be Renamed, Deleted, or Moved:</strong> The &ldquo;Administrators&rdquo; group is a built-in group and cannot be renamed, deleted, or moved within Active Directory. Its name and purpose are fixed.</p>
+</li>
+<li>
+<p><strong>Control Over Domain Controllers:</strong> This built-in group plays a significant role in controlling access to all the domain controllers within its domain. It also has the authority to modify the membership of all administrative groups.</p>
+</li>
+<li>
+<p><strong>Membership Modification:</strong> Membership in the &ldquo;Administrators&rdquo; group can be modified by specific groups, including the default service Administrators, Domain Admins in the domain, or Enterprise Admins. This ensures that only authorized personnel can manage the group&rsquo;s membership.</p>
+</li>
+</ul>
+<h2 id="compatibility-1">Compatibility</h2>
+<p>The &ldquo;Administrators&rdquo; group&rsquo;s roles and privileges apply to specific versions of the Windows Server operating system, as listed in the Active Directory default security groups by operating system version.</p>
+<p>Understanding the role and importance of the &ldquo;Administrators&rdquo; group is fundamental to effectively managing and securing an Active Directory environment.</p>
+<h1 id="privileged-active-directory-permissions-of-interest-to-attackers">Privileged Active Directory Permissions of Interest to Attackers</h1>
+<p>When it comes to Active Directory security, attackers are most interested in permissions that provide privileged actions. These Access Control Lists (ACLs) grant substantial control and can lead to unauthorized access. Below are some of the key ACLs that are of high interest to attackers:</p>
+<h2 id="replicating-directory-changes-all">Replicating Directory Changes All</h2>
+<ul>
+<li><strong>Description:</strong> An extended right needed to replicate changes from a specific Naming Context (NC) to the Global Catalog, which includes secret domain data. This constraint is primarily meaningful for Domain NCs.</li>
+<li><strong>Significance:</strong> When combined with Replicating Directory Changes, it provides the ability to &ldquo;DCSync&rdquo; password data for Active Directory users and computers, including Domain Admins and Domain Controllers.</li>
+<li><strong>Example:</strong> Attackers often target service accounts with this right, granting them access to sensitive data.</li>
+</ul>
+<h2 id="replicating-directory-changes-ds-replication-get-changes">Replicating Directory Changes (DS-Replication-Get-Changes)</h2>
+<ul>
+<li><strong>Description:</strong> A control access right that allows the replication of all data in a given replication NC, excluding secret domain data.</li>
+<li><strong>Significance:</strong> It enables data extraction from Active Directory regardless of configured AD ACLs.</li>
+<li><strong>Example:</strong> Attackers can use this right to pull data from Active Directory, circumventing normal access controls.</li>
+</ul>
+<h2 id="genericall">GenericAll</h2>
+<ul>
+<li><strong>Description:</strong> This right provides full control over an object, allowing the creation or deletion of children, deletion of a subtree, reading and writing properties, examining children and the object itself, adding or removing the object from the directory, and reading or writing with an extended right.</li>
+<li><strong>Significance:</strong> It provides full rights to the object and all its properties, including confidential attributes like LAPS local Administrator passwords and BitLocker recovery keys.</li>
+<li><strong>Example:</strong> Organizations may delegate Full Control to specific groups for easier management but may inadvertently grant excessive privileges.</li>
+</ul>
+<h2 id="genericwrite">GenericWrite</h2>
+<ul>
+<li><strong>Description:</strong> Provides write access to all properties.</li>
+<li><strong>Significance:</strong> It allows reading permissions on an object, writing all properties on the object, and performing all validated writes to the object.</li>
+<li><strong>Example:</strong> Attackers with GenericWrite can modify object properties and potentially exploit security vulnerabilities.</li>
+</ul>
+<h2 id="writedacl">WriteDACL</h2>
+<ul>
+<li><strong>Description:</strong> Provides the ability to modify the security on an object, which can lead to Full Control of the object.</li>
+<li><strong>Significance:</strong> This right allows attackers to manipulate object permissions, potentially leading to full control of the object.</li>
+<li><strong>Example:</strong> If an attacker gains access to a service account with WriteDACL, they can set their permissions on associated objects, potentially exposing sensitive data like LAPS-controlled local Administrator passwords.</li>
+</ul>
+<h2 id="self">Self</h2>
+<ul>
+<li><strong>Description:</strong> Provides the ability to perform validated writes.</li>
+<li><strong>Significance:</strong> It grants rights to perform operations controlled by validated write access rights, including specific attributes.</li>
+<li><strong>Example:</strong> Self rights may be assigned for various operations, and attackers may target these to manipulate or misuse these privileges.</li>
+</ul>
+<p>Understanding and securing these privileged Active Directory permissions is critical for protecting your environment from potential attacks. Effective access control and monitoring are essential for mitigating security risks.</p>
+<h1 id="active-directory-permissions-for-ownership-and-object-control">Active Directory Permissions for Ownership and Object Control</h1>
+<p>Active Directory permissions play a crucial role in managing and securing objects within the directory. Some permissions grant users specific abilities related to object ownership, modification, creation, and deletion. This document aims to clarify the significance of these permissions and their practical implications:</p>
+<h2 id="writeowner">WriteOwner</h2>
+<ul>
+<li><strong>Description:</strong> This permission provides the ability to take ownership of an object. When a user assumes ownership, they gain full control rights over the object.</li>
+<li><strong>Significance:</strong> The owner of an object has the authority to make changes to it, including modifying permissions and attributes.</li>
+<li><strong>Example:</strong> Assume ownership over a user account allows for extensive control over the account, including changing the password, group membership, and more.</li>
+</ul>
+<h2 id="writeproperty">WriteProperty</h2>
+<ul>
+<li><strong>Description:</strong> The WriteProperty permission is often paired with specific attribute or property information. It allows users to modify specific attributes of an object.</li>
+<li><strong>Significance:</strong> This permission grants control over specific attributes, which can be useful for delegated administration or limited attribute modifications.</li>
+<li><strong>Example:</strong> The help desk group may be delegated the ability to modify specific AD object properties such as the Member attribute to manage group memberships, Display Name, Description, Phone Number, etc.</li>
+</ul>
+<h2 id="createchild">CreateChild</h2>
+<ul>
+<li><strong>Description:</strong> CreateChild permission provides the ability to create objects of a specified type, or in some cases, any type within the directory.</li>
+<li><strong>Significance:</strong> Users with this permission can create new objects, which is often critical for administrative tasks and managing the directory&rsquo;s structure.</li>
+<li><strong>Example:</strong> Help desk staff with CreateChild permission can create new user accounts, groups, or other objects as needed.</li>
+</ul>
+<h2 id="deletechild">DeleteChild</h2>
+<ul>
+<li><strong>Description:</strong> DeleteChild permission allows users to delete objects of a specified type or any object, depending on the permission configuration.</li>
+<li><strong>Significance:</strong> Users with this permission can remove objects from the directory, which is essential for cleaning up and maintaining the directory&rsquo;s structure.</li>
+<li><strong>Example:</strong> System administrators with DeleteChild permission can remove obsolete user accounts or groups.</li>
+</ul>
+<h2 id="extended-right">Extended Right</h2>
+<ul>
+<li><strong>Description:</strong> Extended Right permissions offer additional rights beyond the standard permissions and can vary depending on the object.</li>
+<li><strong>Significance:</strong> These permissions grant specific, advanced abilities that are not covered by standard permissions, potentially providing access to otherwise restricted attributes or actions.</li>
+<li><strong>Example:</strong> All Extended Right permissions for a computer object may allow read access to attributes like the LAPS Local Administrator password, which isn&rsquo;t typically accessible.</li>
+</ul>
+<p>Understanding these permissions and their implications is vital for properly configuring and securing your Active Directory environment. Effective management of these permissions ensures that users and groups have the necessary control over objects while maintaining security and integrity.</p>
+<h1 id="identifying-privileged-access-in-active-directory">Identifying Privileged Access in Active Directory</h1>
+<p>Effectively identifying accounts with privileged access in Active Directory is a critical aspect of maintaining a secure environment. This process involves exploring permissions on various AD objects, starting with Organizational Units (OUs), and then branching out to security groups. Here are some essential steps to follow:</p>
+<h2 id="enumeration-of-group-membership">Enumeration of Group Membership</h2>
+<ul>
+<li>Enumerate the group membership of default groups, including sub-groups.</li>
+<li>Identify the specific rights required for each group and remove any unnecessary rights.</li>
+<li>This step helps in ensuring that access is granted only as needed, minimizing potential security risks.</li>
+</ul>
+<h2 id="scanning-for-custom-delegation">Scanning for Custom Delegation</h2>
+<ul>
+<li>Scan Active Directory, focusing on OUs and security groups, to identify custom delegations.</li>
+<li>Custom delegations can grant non-standard access rights, and it&rsquo;s essential to identify and review these for potential risks.</li>
+<li>Ensure that custom delegations are necessary and configured appropriately for security.</li>
+</ul>
+<h2 id="sidhistory-review">SIDHistory Review</h2>
+<ul>
+<li>Check for accounts with SIDHistory. Typically, this is required during an active migration from one domain to another.</li>
+<li>Review the presence of SIDHistory to ensure it&rsquo;s only in use when necessary for migration purposes.</li>
+</ul>
+<h2 id="user-rights-assignments-in-gpos">User Rights Assignments in GPOs</h2>
+<ul>
+<li>Review User Rights Assignments within Group Policy Objects (GPOs) that apply to Domain Controllers, Servers, and Workstations.</li>
+<li>Ensure that user rights are configured correctly, and no unnecessary privileges are granted.</li>
+</ul>
+<h2 id="review-of-gpos-adding-ad-groups-to-local-groups">Review of GPOs Adding AD Groups to Local Groups</h2>
+<ul>
+<li>Review GPOs that add Active Directory groups to local groups on machines.</li>
+<li>Confirm that these additions are still required and that the level of rights granted is appropriate.</li>
+<li>Eliminate any unnecessary group memberships to reduce the potential attack surface.</li>
+</ul>
+<p>By following these steps, defenders can effectively identify accounts with privileged access in Active Directory. This proactive approach to access management contributes to a more secure and well-maintained Active Directory environment, reducing the risk of unauthorized access and potential security vulnerabilities.</p>
 <h1 id="references">References</h1>
 <ol>
 <li>
