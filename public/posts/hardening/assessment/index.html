@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Assessing Vulnerabilities  | Plan Do Check</title>
+
+      <link rel="stylesheet" href="/css/main.min.546947a156cd0208beb3c47a7a9778b42bd8488cf3b10dd5f536e29fd9eda1b5.css" integrity="sha256-VGlHoVbNAgi&#43;s8R6epd4tCvYSIzzsQ3V9Tbin9ntobU=" crossorigin="anonymous">
+
+
+      <script src="/js/main.23cd0c7d837263b9eaeb96ee2d9ccfa2969daa3fa00fa1c1fe8701a9b87251a1.js" integrity="sha256-I80MfYNyY7nq65buLZzPopadqj&#43;gD6HB/ocBqbhyUaE=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>Plan Do Check</h1>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    </ul>
+  </nav>
+
+
+  </header>
+  <main>
+    
+  <h1>Assessing Vulnerabilities </h1>
+
+  
+  
+  <time datetime="2023-10-24T11:00:00-07:00">October 24, 2023</time>
+
+  <h1 id="exploring-attack-patterns-exploiting-software-weaknesses-beyond-expectations">Exploring Attack Patterns: Exploiting Software Weaknesses Beyond Expectations</h1>
+<p>Quality Assurance efforts usually focus on testing that the feature works as expected. In the security world, we examine the software functions in ways never imagined to give us more access to resources and data.</p>
+<h2 id="key-questions-for-understanding-the-technology">Key Questions for Understanding the Technology</h2>
+<p>To understand a technology or system, consider the following key questions:</p>
+<ol>
+<li><strong>How does the technology work?</strong></li>
+<li><strong>What are the data inputs?</strong></li>
+<li><strong>What are the data outputs?</strong></li>
+<li><strong>When does the analysis occur?</strong></li>
+<li><strong>What are the analytical algorithms?</strong></li>
+<li><strong>How does it operate at scale?</strong></li>
+<li><strong>How can it be circumvented?</strong></li>
+<li><strong>How do humans interact with the technology?</strong></li>
+<li><strong>What are the user&rsquo;s responsibilities?</strong></li>
+<li><strong>How does this interaction scale?</strong></li>
+</ol>
+<h2 id="introduction">Introduction</h2>
+<p>Malicious actors care deeply about their work and they do not want to be disrupted while doing it, hence why they spend time working on supply side attacks and doing what they do best avoiding detection. This article will help you counter their efforts and make their jobs more difficult.</p>
+<p>Think about something concrete, a house, car, building. Now think about how a malicious actor might try to get in to that. A house has windows, vents, doors while a car has doors and windows.</p>
+<p>Think about the systems in a house, HVAC, Power, Appliances and a car has similar systems but slightly different a motor or engine, transmission, drive-train and entertainment features.</p>
+<p>Now think about the abstract, a computer here, there, locally or remote has ports, protocols and procedures. These ports, protocols and procedures offer services that we have learned to rely on in our lives.</p>
+<p>Lets extend that thinking pattern you just explored to some new concepts. <strong>Attack Surface Analysis</strong></p>
+<h3 id="attack-surface-analysis-helps-you-to">Attack Surface Analysis helps you to:</h3>
+<pre><code>-Identify what functions and what parts of the system you need to review/test for security vulnerabilities
+
+-Identify high risk areas of code that require defense-in-depth protection - what parts of the system that you need to defend
+
+-Identify when you have changed the attack surface and need to do some kind of threat assessment
+</code></pre>
+<h1 id="the-need-for-testing-beyond-expected-behavior">The need for testing beyond expected behavior</h1>
+<p>The Attack Surface of an application comprises four key components:</p>
+<ol>
+<li>
+<p><strong>Paths for Data/Commands:</strong></p>
+<ul>
+<li>The sum of all entry and exit points for data and commands in the application.</li>
+<li>Includes resource connection, authentication, authorization, activity logging, data validation, and encoding.</li>
+</ul>
+</li>
+<li>
+<p><strong>Protection Code for Paths:</strong></p>
+<ul>
+<li>The code responsible for safeguarding the paths mentioned above.</li>
+<li>Encompasses measures like resource connection security, access control, and data validation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Valuable Data:</strong></p>
+<ul>
+<li>All valuable data utilized in the application, such as secrets, keys, intellectual property, critical business data, personal data, and PII (Personally Identifiable Information).</li>
+</ul>
+</li>
+<li>
+<p><strong>Protection Code for Data:</strong></p>
+<ul>
+<li>The code responsible for protecting the valuable data.</li>
+<li>Includes encryption, checksums, access auditing, data integrity, and operational security controls.</li>
+</ul>
+</li>
+</ol>
+<h2 id="organizing-attack-patterns-by-mechanisms">Organizing Attack Patterns by Mechanisms</h2>
+<p>Here we review attack patterns hierarchically based on common techniques used when exploiting vulnerabilities. These categories represent the various methods employed to attack a system. It&rsquo;s important to note that they don&rsquo;t reflect the consequences or objectives of the attacks.</p>
+<p><strong>Overlap Potential:</strong>
+Some attack patterns may align with more than one category depending on one&rsquo;s perspective. To mitigate this, each attack pattern within a category is presented with a technique that is consistently applicable, without exceptions.</p>
+<h3 id="types-of-attack-patterns">Types of attack patterns</h3>
+<ol>
+<li><strong>Engage in Deceptive Interactions</strong></li>
+<li><strong>Abuse Existing Functionality</strong></li>
+<li><strong>Manipulate Data Structures</strong></li>
+<li><strong>Manipulate System Resources</strong></li>
+<li><strong>Inject Unexpected Items</strong></li>
+<li><strong>Employ Probabilistic Techniques</strong></li>
+<li><strong>Manipulate Timing and State</strong></li>
+<li><strong>Collect and Analyze Information</strong></li>
+<li><strong>Subvert Access Control</strong></li>
+</ol>
+<p>To enhance security, you can overlay this model with various types of users, including their roles and privilege levels when accessing the system. The complexity of your analysis increases with the number of different user types, but it&rsquo;s crucial to focus primarily on two extremes: unauthenticated, anonymous users, and highly privileged admin users (e.g., database administrators and system administrators).</p>
+<p>Here&rsquo;s a structured approach to this analysis:</p>
+<ol>
+<li>
+<p><strong>User Types and Attack Points:</strong></p>
+<ul>
+<li>Group each type of user based on their roles, privilege levels, and the points within the system they can access, whether authorized or not.</li>
+<li>Differentiate between unauthenticated, anonymous users and highly privileged admin users.</li>
+</ul>
+</li>
+<li>
+<p><strong>Attack Point Categories:</strong></p>
+<ul>
+<li>Categorize attack points into buckets based on factors such as:
+<ul>
+<li>Risk (external-facing or internal-facing)</li>
+<li>Purpose of the attack</li>
+<li>Implementation details</li>
+<li>Design considerations</li>
+<li>Technology used</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Count and Prioritize:</strong></p>
+<ul>
+<li>Count the number of attack points in each category.</li>
+<li>Select representative cases for each attack point category.</li>
+</ul>
+</li>
+<li>
+<p><strong>Focused Review/Assessment:</strong></p>
+<ul>
+<li>Concentrate your security review or assessment on these selected representative cases.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>The goal of identifying and understanding attack patterns</li>
+</ul>
+<h2 id="identifying-and-mapping-the-attack-surface">Identifying and Mapping the Attack Surface</h2>
+<p>When identifying and mapping the Attack Surface, consider the following steps:</p>
+<ol>
+<li>
+<p><strong>Building a Baseline Description:</strong></p>
+<ul>
+<li>Create a comprehensive picture and take notes about the Attack Surface.</li>
+<li>Spend a few hours reviewing design and architecture documents from an attacker&rsquo;s perspective.</li>
+</ul>
+</li>
+<li>
+<p><strong>Identifying Points of Entry/Exit:</strong></p>
+<ul>
+<li>Review the source code to identify various points of entry and exit.</li>
+<li>These can include:
+<ul>
+<li>User interface (UI) forms and fields</li>
+<li>HTTP headers and cookies</li>
+<li>APIs</li>
+<li>Files</li>
+<li>Databases</li>
+<li>Other local storage</li>
+<li>Email or other messaging systems</li>
+<li>Runtime arguments</li>
+<li>And any other specific entry/exit points relevant to your system.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Managing Numerous Attack Points:</strong></p>
+<ul>
+<li>Recognize that the total number of different attack points can be significant, potentially reaching into the thousands.</li>
+<li>To make this manageable, categorize them into different types based on function, design, and technology.</li>
+</ul>
+</li>
+<li>
+<p><strong>Categorized Attack Points:</strong></p>
+<ul>
+<li>Organize your attack points into types that reflect their respective functions, design aspects, and technology.</li>
+<li>Consider categories such as:
+<ul>
+<li>Login/authentication entry points</li>
+<li>Admin interfaces</li>
+<li>Inquiries and search functions</li>
+<li>Data entry (CRUD) forms</li>
+<li>Business workflows</li>
+<li>Transactional interfaces/APIs</li>
+<li>Operational command and monitoring interfaces/APIs</li>
+<li>Interfaces with other applications/systems</li>
+<li>And any other relevant types specific to your system.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="identifying-weaknesses-in-software">Identifying Weaknesses in Software</h2>
+<p>Common software vulnerabilities (e.g., SQL injection, XSS, buffer overflows)
+Use the <a href="https://cwe.mitre.org">CWE</a> to find common weaknesses
+This can identify interesting trends in real-world, exploitable weaknesses that can inform security policy and investment decision-making. To observe both upward and downward trends in CWE ranks.</p>
+<h2 id="benefits-of-cwes-common-weakness-enumerations">Benefits of CWEs (Common Weakness Enumerations)</h2>
+<p>CWEs offer several valuable benefits:</p>
+<ol>
+<li>
+<p><strong>Demonstrative Examples:</strong></p>
+<ul>
+<li>CWEs provide demonstrative examples, often including sample attack payloads that serve as a starting point for crafting our own exploits.</li>
+</ul>
+</li>
+<li>
+<p><strong>Links to Observed Examples:</strong></p>
+<ul>
+<li>They also link to observed examples, which are instances found in real production software. These are typically connected to CVEs (Common Vulnerabilities and Exposures).</li>
+</ul>
+</li>
+<li>
+<p><strong>Links to Attack Patterns:</strong></p>
+<ul>
+<li>One of the most valuable aspects is that CWEs link to related attack patterns. These attack patterns are part of a knowledge base called <a href="https://capec.mitre.org">CAPEC</a> (Common Attack Pattern Enumeration and Classification). CAPEC helps identify and understand common attack patterns used by malicious actors.</li>
+</ul>
+</li>
+</ol>
+<p>Three specific weaknesses in software security have shown a consistent upward trend in ranking, and software developers and maintainers should prioritize addressing them:</p>
+<ol>
+<li>
+<p><strong>CWE-862: Missing Authorization</strong></p>
+<ul>
+<li>In 2019, it was ranked 36th.</li>
+<li>Entered the CWE Top 25 in 2020, ranked 25th, and has consistently moved up.</li>
+<li>In 2023, it&rsquo;s ranked 11th, indicating a need for more diligent implementation of authorization techniques.</li>
+</ul>
+</li>
+<li>
+<p><strong>CWE-918: Server-Side Request Forgery (SSRF)</strong></p>
+<ul>
+<li>In 2019, it was ranked 32nd.</li>
+<li>Entered the CWE Top 25 in 2021, ranked 24th, and has steadily climbed.</li>
+<li>In 2023, it&rsquo;s ranked 19th, showing a consistent upward trend.</li>
+</ul>
+</li>
+<li>
+<p><strong>CWE-639: Authorization Bypass Through User-Controlled Key</strong></p>
+<ul>
+<li>In 2019, it was ranked outside the top 40.</li>
+<li>Steadily climbed in rank over the years, reaching 38th in 2023.</li>
+<li>This upward trend is worth monitoring for further movement and improvements in security.</li>
+</ul>
+</li>
+</ol>
+<p>These weaknesses highlight areas where security measures should be prioritized, and developers should pay attention to implementing safeguards against them.</p>
+<h2 id="thinking-like-an-attacker">Thinking Like an Attacker</h2>
+<p>Attackers are thinking about how to avoid detection, heres a common approach to how an attacker conducts footprinting and builds resources to complete their work.</p>
+<h3 id="fingerprinting-of-the-operating-system">Fingerprinting of the Operating System</h3>
+<ul>
+<li><strong>Objective:</strong> To determine the underlying OS for proper path traversal.</li>
+<li><strong>Techniques:</strong>
+<ul>
+<li>Port Mapping: Identifying listening ports and protocol types.</li>
+<li>TCP/IP Fingerprinting: Observing OS-specific responses.</li>
+<li>Inducing Errors: Generating errors for informative messages.</li>
+<li>Surveying the Application: Identifying user input areas for specifying file names or paths.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Port Mapping</td>
+<td>Identify listening ports and protocol types.</td>
+</tr>
+<tr>
+<td>TCP/IP Fingerprinting</td>
+<td>Observe OS-specific responses for OS guessing.</td>
+</tr>
+<tr>
+<td>Inducing Errors</td>
+<td>Generate errors to find informative messages.</td>
+</tr>
+<tr>
+<td>Surveying the App</td>
+<td>Identify user input areas for file paths.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="experimentation-with-input-parameters">Experimentation with Input Parameters</h3>
+<ul>
+<li><strong>Objective:</strong> Observe system responses to variations in input parameters.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access Common Files</td>
+<td>Access common files in root directories.</td>
+</tr>
+<tr>
+<td>Access Drive Letters</td>
+<td>Access specific drive or volume letters.</td>
+</tr>
+<tr>
+<td>Access UNC Shares</td>
+<td>Access known Windows UNC shares.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exploiting-vulnerabilities">Exploiting Vulnerabilities</h3>
+<ul>
+<li><strong>Objective:</strong> Inject path traversal syntax to access, modify, or execute arbitrary files.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manipulate File Paths</td>
+<td>Manipulate file paths through absolute sequences.</td>
+</tr>
+<tr>
+<td>Download/Modify/Execute</td>
+<td>Download, modify, or attempt to execute files.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion">Conclusion</h2>
+<p>When it comes to security testing, even if you&rsquo;ve thoroughly covered all the basics like examining Common Weakness Enumerations (CWEs) related to Broken Access Control and tracking down common attack patterns, you can&rsquo;t claim absolute freedom from vulnerabilities. You can&rsquo;t guarantee the software&rsquo;s security with certainty.</p>
+<p>And that&rsquo;s perfectly fine.</p>
+<p>There might still be business logic bugs that slipped through the cracks. There could be untested input patterns or unknown tainted payloads that could potentially exploit weaknesses. As you gain more experience, your testing methodology will improve, and you&rsquo;ll likely discover and address these issues over time.</p>
+<p>The process doesn&rsquo;t end there, though. You&rsquo;ll need to apply the same scrutiny to the other nine items in the Top 10 list. By doing so, you&rsquo;ll establish a solid foundation for protecting against common risks and using real-world attack patterns. It&rsquo;s an ongoing journey towards a more secure software environment.</p>
+<p><a href="mailto:john@grcand.me">Drop me a line</a></p>
+
+  
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/assessments/">Assessments</a></li>
+    </ul>
+  </div>
+
+
+  </main>
+  <footer>
+    <p>Copyright 2023. All rights reserved.</p>
+
+  </footer>
+</body>
+</html>

@@ -6,13 +6,31 @@
     <description>Recent content in Tags on Plan Do Check</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Oct 2023 11:00:00 -0700</lastBuildDate><atom:link href="https://pdq.pages.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Oct 2023 11:00:00 -0700</lastBuildDate><atom:link href="https://pdq.pages.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Assessments</title>
+      <link>https://pdq.pages.dev/tags/assessments/</link>
+      <pubDate>Tue, 24 Oct 2023 11:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/assessments/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Hardening</title>
       <link>https://pdq.pages.dev/tags/hardening/</link>
       <pubDate>Sat, 21 Oct 2023 11:00:00 -0700</pubDate>
       
       <guid>https://pdq.pages.dev/tags/hardening/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network Considerations</title>
+      <link>https://pdq.pages.dev/tags/network-considerations/</link>
+      <pubDate>Sat, 21 Oct 2023 11:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/tags/network-considerations/</guid>
       <description></description>
     </item>
     

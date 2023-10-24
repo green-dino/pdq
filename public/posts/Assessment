@@ -41,11 +41,11 @@ Lets extend that thinking pattern you just explored to some new concepts. **Atta
 
 ### Attack Surface Analysis helps you to:
 
-Identify what functions and what parts of the system you need to review/test for security vulnerabilities
+    -Identify what functions and what parts of the system you need to review/test for security vulnerabilities
 
-Identify high risk areas of code that require defense-in-depth protection - what parts of the system that you need to defend
+    -Identify high risk areas of code that require defense-in-depth protection - what parts of the system that you need to defend
 
-Identify when you have changed the attack surface and need to do some kind of threat assessment
+    -Identify when you have changed the attack surface and need to do some kind of threat assessment
 
 
 # The need for testing beyond expected behavior

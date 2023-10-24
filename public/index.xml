@@ -8,12 +8,36 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Oct 2023 08:00:00 -0700</lastBuildDate><atom:link href="https://pdq.pages.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Assessing Vulnerabilities </title>
+      <link>https://pdq.pages.dev/posts/hardening/assessment/</link>
+      <pubDate>Tue, 24 Oct 2023 11:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/posts/hardening/assessment/</guid>
+      <description>Exploring Attack Patterns: Exploiting Software Weaknesses Beyond Expectations Quality Assurance efforts usually focus on testing that the feature works as expected. In the security world, we examine the software functions in ways never imagined to give us more access to resources and data.
+Key Questions for Understanding the Technology To understand a technology or system, consider the following key questions:
+How does the technology work? What are the data inputs? What are the data outputs?</description>
+    </item>
+    
+    <item>
       <title>Considerations about Active Directory</title>
       <link>https://pdq.pages.dev/posts/hardening/hardening/</link>
       <pubDate>Sat, 21 Oct 2023 11:00:00 -0700</pubDate>
       
       <guid>https://pdq.pages.dev/posts/hardening/hardening/</guid>
       <description>Active Directory Privileged Access Introduction The challenge of understanding the access privileges of various groups in Active Directory. Often, the full impact of a group&amp;rsquo;s access is not fully comprehended by the organization. Attackers frequently exploit access, even if it&amp;rsquo;s not always privileged access, to compromise Active Directory. Components of Access Rights Active Directory group membership. AD groups with privileged rights on computers. Delegated rights to AD objects through modifications of default permissions (for security principals, both direct and indirect).</description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>https://pdq.pages.dev/posts/networkanalysis/networkanalysis/</link>
+      <pubDate>Sat, 21 Oct 2023 11:00:00 -0700</pubDate>
+      
+      <guid>https://pdq.pages.dev/posts/networkanalysis/networkanalysis/</guid>
+      <description>I. Introduction Computer systems are connected, with networks. The network components are presented in seven layers, from physical to Application, layers are interconnected with systems built of components. This document will explains three concepts
+Transport Layer Protocol vulnerabilities, controls and mitigations
+Network Layer Protocols vulnerabilities, controls and mitigations
+Media Access Control(MAC) vulnerabilities, controls and mitigations
+OSI Layer Network Communication Stack Layer 7. Application Application Layer 6. Presentation Presentation Layer 5. Session Session Layer 4.</description>
     </item>
     
     <item>
@@ -128,19 +152,6 @@ Untitled Goose Tool for Azure, Azure Active Directory, and Microsoft 365 Python 
       <guid>https://pdq.pages.dev/tools/meeting_agenda/</guid>
       <description>This page serves as the template for technical meeting agendas, limit meeting sessions to 45 minutes, and technical conversations to not more than 3 per 45 minute period.
 Meeting Agenda I. Introduction A. Welcome and introductions B. Purpose and goals of the meeting C. Agenda overview II. Review of Previous Action Items A. Recap of action items from the previous meeting B. Update on the progress of each action item C.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://pdq.pages.dev/posts/networkanalysis/networkanalysis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://pdq.pages.dev/posts/networkanalysis/networkanalysis/</guid>
-      <description>I. Introduction Computer systems are connected, with networks. The network components are presented in seven layers, from physical to Application, layers are interconnected with systems built of components. This document will explains three concepts
-Transport Layer Protocol vulnerabilities, controls and mitigations
-Network Layer Protocols vulnerabilities, controls and mitigations
-Media Access Control(MAC) vulnerabilities, controls and mitigations
-OSI Layer Network Communication Stack Layer 7. Application Application Layer 6. Presentation Presentation Layer 5. Session Session Layer 4.</description>
     </item>
     
   </channel>
