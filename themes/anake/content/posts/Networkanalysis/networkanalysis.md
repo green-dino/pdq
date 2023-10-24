@@ -1,7 +1,7 @@
 +++
 title = 'Networking'
 date = 2023-10-21T11:00:00-07:00
-draft = false
+draft = true
 tags = ['Network Considerations']
 +++
 # I. Introduction
