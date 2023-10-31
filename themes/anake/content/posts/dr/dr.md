@@ -1,3 +1,10 @@
++++
+title = 'Disaster Recovery CI-CD'
+date = 2023-10-31T14:30:00-07:00
+draft = false
+tags = ['DR','CI,CD']
++++
+
 # Enhanced Disaster Recovery Plan for Systems Administrators
 
 # Change Control Considerations before you begin this project  
