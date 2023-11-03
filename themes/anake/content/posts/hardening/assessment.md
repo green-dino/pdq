@@ -1,10 +1,10 @@
 +++
-categories: ['Security', 'Software Testing']
-date: '2023-11-03'
-description: 'Exploring Attack Patterns: Exploiting Software Weaknesses Beyond Expectations'
-slug: 'exploring-attack-patterns-exploiting-software-weaknesses'
-tags: ['Security', 'Software Weaknesses', 'Attack Patterns', 'CWE', 'Vulnerabilities']
-title: 'Exploring Attack Patterns: Exploiting Software Weaknesses Beyond Expectations'
+categories = ['Security']
+date = '2023-11-03'
+description = 'Exploring Attack Patterns: Exploiting Software Weaknesses Beyond Expectations'
+slug = 'exploring-attack-patterns-exploiting-software-weaknesses'
+tags = ['Security', 'Software Weaknesses', 'Attack Patterns', 'CWE', 'Vulnerabilities']
+title = 'Exploring Attack Patterns: Exploiting Software Weaknesses Beyond Expectations'
 draft = false
 +++
 
