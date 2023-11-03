@@ -48,6 +48,7 @@ A secure host is a critical component of a robust cybersecurity strategy. It sho
 A secure host runs network services, including its operating system, that are known for their reliability and have withstood the test of time. These services should have a proven track record of security and stability.
 ## Strong Administrator Authentication: 
 Access to a secure host is limited to administrators who are strongly authenticated. This means that only authorized personnel with the highest level of authentication should have access. Physical access may also be required for added security.
+
 Avoid Weak User Access: To maintain a secure environment, minimizing the number of users who have access to the host is essential. Weak users or unnecessary access points should be avoided whenever possible.
 ## Limited Access from Specific Hosts:
 General access to a secure host should be allowed from a very restricted number of secure hosts within the same community. These trusted hosts should communicate over private links or employ strong encryption methods.
