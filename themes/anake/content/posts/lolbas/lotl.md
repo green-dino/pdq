@@ -1,6 +1,6 @@
 +++
 title = 'Living Off The land'
-date = 2023-10-05T11:00:00-07:00
+date = 2023-11-02T11:00:00-07:00
 draft = false
 tags = ['lotl']
 +++
