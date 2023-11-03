@@ -1,8 +1,11 @@
 +++
-title = 'Assessing Vulnerabilities '
-date = 2023-10-24T11:00:00-07:00
+categories: ['Security', 'Software Testing']
+date: '2023-11-03'
+description: 'Exploring Attack Patterns: Exploiting Software Weaknesses Beyond Expectations'
+slug: 'exploring-attack-patterns-exploiting-software-weaknesses'
+tags: ['Security', 'Software Weaknesses', 'Attack Patterns', 'CWE', 'Vulnerabilities']
+title: 'Exploring Attack Patterns: Exploiting Software Weaknesses Beyond Expectations'
 draft = false
-tags = ['Assessments']
 +++
 
 

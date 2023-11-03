@@ -1,8 +1,11 @@
 +++
-title = 'Considerations about Active Directory'
-date = 2023-10-21T11:00:00-07:00
-draft = false
-tags = ['Hardening']
+categories: ['Active Directory', 'Access Rights', 'Security']
+date: '2023-11-03'
+description: 'Understanding the "Account Operators" Group in Active Directory'
+slug: 'active-directory-account-operators-group'
+tags: ['Active Directory', 'Account Operators', 'Privileges', 'Security Best Practices']
+title: 'Understanding the "Account Operators" Group in Active Directory'
+draft: false
 +++
 
 
