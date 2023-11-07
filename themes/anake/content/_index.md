@@ -4,22 +4,41 @@ date = 2023-10-01T08:00:00-07:00
 draft = false
 +++
 
-Transform ideas into successful outcomes, I lead security programs to foster trust.  My expertise, which spans cybersecurity, IT, and Leadership, allows me to create practical security solutions that drive business growth.
-
-This website is designed to empower Engineers, Architects, Developers or just regular users to more readily understand security.
-
 The top of the page contains a ['tags'](https://pdq.pages.dev/tags/) feature to let you search the topics of the posts. 
 
 If you are looking to get started I suggest checking out [Plan - Phase 1, Steps 1-6](https://pdq.pages.dev/posts/post-1/), [Do - Phase 2, Steps 7-10](https://pdq.pages.dev/posts/post-2/) otherwise each article's headline is clearly articulated with a sample of the body of the text. 
 
-# Setting goals
-Is an imperative part of a successful organization. Goal establishment does not occur in a vacuum. It is dynamic because the goals selected shape the organization, the outcomes, and the community. Decisions have consequences. The balance of determining the consequences based on the data we have and the way we move forward requires due diligence. Developing that due diligence, requires an understanding of several  components, Data, Alignment, and Metrics. The collection of data to improve our decision making process should consider the components of equity and ethics, a human centered approach to data. The process of developing data is a critical step that necessitates measurement, with the realization that the decisions made in this realm bear a profound impact on communities and the future of our communities.
+# About:
+Security Professional and United States Army Veteran with over 15 years of experience in maintaining zero-fault environments at prestigious institutions such as the White House and the Pentagon. Demonstrated leadership skills in diverse, high-pressure team settings. Extensive expertise in information technology, computer security architecture, and development of security protocols through hands-on experience in domestic and international operations. Proven ability to effectively collaborate with individuals from diverse backgrounds and adeptly handle challenging customer interactions. Quick learner with a strong aptitude for building and nurturing key customer relationships, complemented by an Inactive Top-Security SCI and Critical Infrastructure Clearance.
 
-My education at the University of Arizona in Data and Computer Science has equipped me with ethical, sustainable, and adaptable methodologies.
 
-By establishing Data, Alignment and Metrics with proactive policies we create goals that empower our teams to monitor work and assess results.
+| **Skill Category**        | **Skills/Competencies**                                            |
+|---------------------------|---------------------------------------------------------------------|
+| **Security Safeguards**   | Security Protocols, Risk Mitigation, Access Control, Threat Analysis |
+| **Workflow Enhancement**  | Process Automation, Efficiency Optimization, Process Streamlining    |
+| **Operational Strategy**  | Tactical Planning, Resource Allocation, Operational Optimization   |
+| **Data Protection**       | Data Encryption, Privacy Measures, Data Loss Prevention             |
+| **Infrastructure Control**| Network Administration, System Monitoring, Redundancy Strategies     |
+| **Technology Risk Control** | Risk Assessment, Security Safeguards, Threat Mitigation            |
+| **Risk Governance**       | Compliance Oversight, Risk Policies, Regulatory Adherence            |
+| **Compliance Management** | Regulatory Compliance, Policy Enforcement, Audit Preparation         |
+| **Client Relations**      | Customer Support, Client Satisfaction, Relationship Management       |
+| **Technical Competencies**|                                                                   |
+|     **Cloud and Virtualization:**                       | AWS, EC2, Route53, VMware, Proxmox, Azure |
+| **Linux and DevOps:**                          |  Linux, NGINX, Puppet, Git, Docker               |
+|       **Security Tools:**                    |  Splunk, Nessus, OWASP, Burp Suite, Cyber Chef, Kali |
+|   **Programming and Scripting:**                        |  JavaScript, Python, LaTeX               |
+|      **Networking and Load Balancing:**                     |  NetScaler, F5                      |
+|  **Threat Detection and Analysis:**                         |  Checkmark, OSINT, SIGINT, ELINT, HUMINT |
+|      **Practices:**                     |  Agile, Waterfall                                        |
+|       **Frameworks:**                     | NIST 800-53, ISO 27000:1, MITRE, ATT&CK, FFIEC, NCUA, NERC, FERC, CIP |
+|       **Transmission System:**                     | Ku/KA Band, HF/VHF/SHV, COAXIAL               |
+|     **Domains:**                       | Hybrid-multi cloud, Virtualization, Containerization, Hyper-scaling, ITIL/ITSM, Systems Administration |
+| **Databases**              | Experience with NoSQL DBs, Relational DBs, Object Store architectures across globally replicated cloud instances |
 
-Effective communication regarding data utilization is paramount in aligning metrics and fostering a proactive approach to driving change. As a Civil Servant, part of my role involved the recruitment of employees, both full-time and contract staff, for classified projects aimed at enhancing our nation's security. One such endeavor was the critical task of assembling a team dedicated to the long-term security of the internet, a vital resource for our military. In this capacity, my responsibilities extended beyond the mere selection of individuals. I delved into understanding their compatibility within the team and how their contributions could nurture their own career growth while strengthening the collective effort.
+
+
+
 
 
 # Consequence Analysis
@@ -44,13 +63,10 @@ In all endeavors, our goals serve as guiding beacons and protective guardrails, 
 
 A secure host is a critical component of a robust cybersecurity strategy. It should adhere to specific principles that prioritize security and minimize potential vulnerabilities.
 
-## Time-Tested and Reliable Services: 
-A secure host runs network services, including its operating system, that are known for their reliability and have withstood the test of time. These services should have a proven track record of security and stability.
-## Strong Administrator Authentication: 
-Access to a secure host is limited to administrators who are strongly authenticated. This means that only authorized personnel with the highest level of authentication should have access. Physical access may also be required for added security.
-
-Avoid Weak User Access: To maintain a secure environment, minimizing the number of users who have access to the host is essential. Weak users or unnecessary access points should be avoided whenever possible.
-## Limited Access from Specific Hosts:
-General access to a secure host should be allowed from a very restricted number of secure hosts within the same community. These trusted hosts should communicate over private links or employ strong encryption methods.
-## Access Restriction: 
-Access to the secure host from other hosts must be carefully controlled and limited to equally secure hosts. This restriction ensures that only trusted and secure connections are permitted
+| Principle                             | Description                                                                                                       |
+|---------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Time-Tested and Reliable Services     | A secure host runs network services, including its operating system, that are known for their reliability and have withstood the test of time. These services should have a proven track record of security and stability.                                                                                           |
+| Strong Administrator Authentication   | Access to a secure host is limited to administrators who are strongly authenticated. This means that only authorized personnel with the highest level of authentication should have access. Physical access may also be required for added security.                                                                                           |
+| Avoid Weak User Access                | To maintain a secure environment, minimizing the number of users who have access to the host is essential. Weak users or unnecessary access points should be avoided whenever possible.                                                                                           |
+| Limited Access from Specific Hosts     | General access to a secure host should be allowed from a very restricted number of secure hosts within the same community. These trusted hosts should communicate over private links or employ strong encryption methods.                                                                                           |
+| Access Restriction                    | Access to the secure host from other hosts must be carefully controlled and limited to equally secure hosts. This restriction ensures that only trusted and secure connections are permitted.                                                                                           |
